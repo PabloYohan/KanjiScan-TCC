@@ -1,0 +1,19 @@
+# Web framework
+fastapi>=0.115.0
+uvicorn[standard]>=0.34.0
+python-multipart>=0.0.20
+
+# Settings & env
+pydantic-settings>=2.0.0
+python-dotenv>=1.0.0
+
+# Image processing
+pillow>=11.0.0
+numpy>=1.26.0
+scipy>=1.13.0
+opencv-python-headless>=4.10.0
+
+# Deep learning & inference
+# For GPU support replace with: torch --index-url https://download.pytorch.org/whl/cu124
+torch>=2.4.0
+onnxruntime>=1.20.0
