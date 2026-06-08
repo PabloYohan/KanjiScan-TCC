@@ -148,7 +148,7 @@ O modelo CNN foi treinado em 3.755 kanji e exportado no formato ONNX com quantiz
 |---|---|
 | `best_cnn_model.onnx` | Grafo de inferência |
 | `best_cnn_model.onnx.data` | Pesos do modelo (~9 MB) |
-| `classes.json` | Mapeamento índice → kanji (3.755 classes) |
+| `classes.json` | Mapeamento índice → kanji |
 | `meaning.json` | Kanji → significado em inglês |
 
 ---
