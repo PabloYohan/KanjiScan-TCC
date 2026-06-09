@@ -17,13 +17,13 @@ Aplicativo Flutter  →  POST /api/predict (multipart)  →  API Python
 
 ```
 KanjiScan - TCC/
-├── flutter_application_1/   # Aplicativo mobile (Flutter/Dart)
+├── japanese-oct-app/   # Aplicativo mobile (Flutter/Dart)
 └── japanese-ocr-api-py/     # API de inferência (Python/FastAPI)
 ```
 
 ---
 
-## flutter_application_1 — Aplicativo Mobile
+## japanese-oct-app — Aplicativo Mobile
 
 ### Tecnologias
 
@@ -55,7 +55,7 @@ static const String baseUrl = 'http://192.168.18.126:3000';
 ### Como executar
 
 ```bash
-cd flutter_application_1
+cd japanese-oct-app
 flutter pub get
 flutter run
 ```
