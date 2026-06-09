@@ -4,7 +4,9 @@ Aplicação de reconhecimento óptico de caracteres japoneses (kanji) desenvolvi
 
 ## Visão Geral
 
-O usuário fotografa ou seleciona uma imagem contendo um kanji, o aplicativo envia a imagem para a API, que realiza o pré-processamento e executa um modelo CNN (ONNX) treinado. O resultado — caractere, confiança e significado em inglês — é exibido na tela.
+O usuário fotografa ou seleciona uma imagem contendo um caractere japonês, o aplicativo envia a imagem para a API, que realiza o pré-processamento e executa um modelo CNN (ONNX) treinado. O resultado — caractere, confiança e significado em português — é exibido na tela.
+
+O modelo reconhece **215 classes**: hiragana, katakana e os kanjis do nível JLPT N5.
 
 ```
 Aplicativo Flutter  →  POST /api/predict (multipart)  →  API Python
@@ -87,7 +89,7 @@ flutter run
   "data": {
     "label": "楷",
     "confidence": 0.9645,
-    "meaning": "block style (of calligraphy)"
+    "meaning": "método de escrita quadrada e correta"
   }
 }
 ```
@@ -142,14 +144,14 @@ A API estará disponível em `http://localhost:3000`.
 
 ## Modelo
 
-O modelo CNN foi treinado em 3.755 kanji e exportado no formato ONNX com quantização. Os arquivos ficam em `japanese-ocr-api-py/src/ai_model/` e **não são versionados** (`.gitignore`).
+O modelo CNN foi treinado em **215 classes** (hiragana, katakana e kanjis JLPT N5) e exportado no formato ONNX. Os arquivos ficam em `japanese-ocr-api-py/src/ai_model/` e **não são versionados** (`.gitignore`).
 
 | Arquivo | Descrição |
 |---|---|
 | `best_cnn_model.onnx` | Grafo de inferência |
 | `best_cnn_model.onnx.data` | Pesos do modelo (~9 MB) |
-| `classes.json` | Mapeamento índice → kanji |
-| `meaning.json` | Kanji → significado em inglês |
+| `classes.json` | Mapeamento índice → caractere (215 classes) |
+| `meaning.json` | Caractere → significado em português |
 
 ---
 
